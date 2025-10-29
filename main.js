@@ -30,7 +30,6 @@ let currentLang = "en";
         footerElement.style.fontSize = newFontSize;
     }
 
-    // для скринридеров
     document.documentElement.setAttribute("lang", currentLang);
 
     async function loadDict(language) {
