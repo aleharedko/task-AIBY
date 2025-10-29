@@ -1,0 +1,304 @@
+:root {
+    --color-text: #fff;
+    --color-bg-chosen:  #fff;
+    --border-chosen: 1px solid #fff;
+    --color-bg-blur: rgba(255, 255, 255, 0.1);
+    --color-dark: #070b33;
+    --color-best-gradient: linear-gradient(90deg, #bc1fef 0%, #0035ff 100%);
+    --color-best-border: linear-gradient(
+            270deg,
+            #00b5ff 0%,
+            #632af7 53%,
+            #ff96f4 100%
+    );
+    --radius-pill: 9999px;
+    --radius-box: 6.25rem;
+    --radius-card: 1rem;
+    --shadow-text: 0 0 3rem rgba(4, 3, 26, 0.83);
+    --shadow-box-best: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+    --blur-bg: blur(0.625rem);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-text);
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-bar {
+    width: 100%;
+    height: 3rem;
+}
+
+.close-icon {
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    z-index: 100;
+}
+
+.close-icon img {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-bottom: 2rem;
+    margin-top: clamp(5rem, 20vh, 11.125rem);
+}
+
+footer {
+    margin-top: auto;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.margin-text-h1 {
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 2.625rem;
+    line-height: 1.1;
+    text-align: center;
+    text-shadow: var(--shadow-text);
+}
+
+.img-box-container {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-box {
+    border-radius: var(--radius-card);
+    width: 6.875rem;
+    height: 9.125rem;
+    object-fit: cover;
+    display: block;
+}
+
+.text-box {
+    position: absolute;
+    bottom: 0.375rem;
+    left: 0.5rem;
+    width: 6.125rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    z-index: 2;
+}
+
+.box-offer {
+    margin-bottom: 1rem;
+}
+
+.box {
+    width: 21.375rem;
+    min-height: 3.5rem;
+    border-radius: var(--radius-box);
+    backdrop-filter: var(--blur-bg);
+    background: var(--color-bg-blur);
+    position: relative;
+    max-width: 100%;
+}
+
+.box-first {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    position: relative;
+}
+
+.box-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.box-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.1;
+    padding-right: 1rem;
+}
+
+.aboveBest {
+    position: absolute;
+    top: -0.75rem;
+    right: 1.25rem;
+    height: 1.5rem;
+    padding: 0.125rem 0.625rem;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-best-gradient);
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 2;
+    pointer-events: none;
+}
+.aboveBest::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--color-best-border);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+.aboveBest > span {
+    position: relative;
+    z-index: 1;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.025rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.box-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+.box-subtitle {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
+.box-price {
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+.box-price-sub {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.box-weekly {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+}
+
+.box-continue {
+    width: 21.375rem;
+    height: 3.5rem;
+    border-radius: var(--radius-box);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: var(--color-dark);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    max-width: 100%;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0.3;
+    width: 17.5rem;
+    height: 1.125rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.toolbar > li {
+    font-weight: 200;
+    font-size: 0.8125rem;
+    text-decoration: underline;
+    list-style: none;
+    text-align: center;
+}
+
+.toolbar > li > a {
+    color: var(--color-text);
+}
+
+.chosen{
+    border: var(--border-chosen);
+    backdrop-filter: blur(10.873126983642578px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.chosen-best{
+    --color-best-gradient: none;
+    --color-best-border: none;
+    box-shadow: var(--shadow-box-best);
+    background: var(--color-bg-chosen);
+    /*Мб через js убрать из спана белый и накинуть данный цвет?*/
+    color: var(--color-dark);
+}
+
+@media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        background-image: url(assets/img/bg@2x.jpg);
+    }
+}
+@media (min-resolution: 3dppx), (-webkit-min-device-pixel-ratio: 3) {
+    body {
+        background-image: url(assets/img/bg@3.jpg);
+    }
+}
+
+/*как опустить верхний край ниже*/
+@media only screen and (max-height: 667px) {
+    main{
+        margin-top: clamp(3rem, 7vh, 11.125rem)
+    }
+}
+
+@supports (padding-top: constant(safe-area-inset-top)) {
+    footer {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
