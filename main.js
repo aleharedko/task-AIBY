@@ -1,3 +1,6 @@
+let currentLang = "en";
+
+
 (function () {
     const SUPPORTED = ["en", "de", "es", "fr", "ja", "pt"];
     const DEFAULT_LANG = "en";
@@ -6,7 +9,7 @@
     function detectLang() {
         const urlLang = new URLSearchParams(location.search).get("lang");
         const norm = (x) => (x || "").toLowerCase().slice(0, 2);
-        const qLang = norm(urlLang);
+       const qLang = norm(urlLang);
 
         if (SUPPORTED.includes(qLang)) return qLang;
 
@@ -18,15 +21,22 @@
         return DEFAULT_LANG;
     }
 
-    const lang = detectLang();
+    currentLang = detectLang();
+
+    const footerElement = document.querySelector('footer');
+    const newFontSize = (currentLang === "en") ? '.815rem' : '.5rem';
+    console.log(currentLang)
+    if (footerElement) {
+        footerElement.style.fontSize = newFontSize;
+    }
+
     // для скринридеров
-    document.documentElement.setAttribute("lang", lang);
+    document.documentElement.setAttribute("lang", currentLang);
 
     async function loadDict(language) {
         const res = await fetch(I18N_PATH(language)).catch(() => null);
         if (!res || !res.ok) {
-            if (language !== DEFAULT_LANG) return loadDict(DEFAULT_LANG);
-            return {};
+            return language !== DEFAULT_LANG ? loadDict(DEFAULT_LANG) : {};
         }
         return res.json();
     }
@@ -57,24 +67,16 @@
                 } catch (_) {}
             }
 
-            const tmpl = dict[key] != null ? dict[key] : key;
+            const tmpl = dict[key] ? dict[key] : key;
             const html = interpolate(tmpl, params);
 
             el.innerHTML = html;
         });
     }
 
-    loadDict(lang).then(applyI18n).catch(console.error);
+    loadDict(currentLang).then(applyI18n).catch(console.error);
+
 })();
-
-
-const footerElement = document.querySelector('footer');
-const lang = 'en';
-const newFontSize = (lang === 'en') ? '1rem' : '.75rem';
-
-if (footerElement) {
-    footerElement.style.fontSize = newFontSize;
-}
 
 const yearlyBtn = document.getElementById("box-fers")
 const bestPlug = document.getElementById("aboveBest")

@@ -26,7 +26,7 @@
 }
 
 html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system,"SF Pro", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--color-text);
     height: 100%;
     font-size: 16px;
@@ -36,8 +36,9 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    /*background-position: center;*/
     background-repeat: no-repeat;
+    background-position: top;
 }
 
 .container {
@@ -254,7 +255,7 @@ h1 {
 
 .toolbar > li {
     font-weight: 200;
-    font-size: 0.8125rem;
+    /*font-size: 0.8125rem;*/
     text-decoration: underline;
     list-style: none;
     text-align: center;
@@ -281,6 +282,11 @@ h1 {
     box-shadow: var(--shadow-box-best);
     background: var(--color-bg-chosen);
     /*Мб через js убрать из спана белый и накинуть данный цвет?*/
+
+
+}
+
+.chosen-best span{
     color: var(--color-dark);
 }
 
@@ -292,6 +298,7 @@ h1 {
 @media (min-resolution: 3dppx), (-webkit-min-device-pixel-ratio: 3) {
     body {
         background-image: url(assets/img/bg@3.jpg);
+
     }
 }
 
