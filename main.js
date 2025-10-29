@@ -82,12 +82,15 @@ const weeklyBtn = document.getElementById("box-weekly")
 
 function changeStyle () {
     document?.addEventListener("click",(event) =>{
-        const target = event.target
-        if (target.id === "box-fers" || target.id === "aboveBest" ){
+
+        const clickYearly = event.target.closest("#box-fers")
+        const clickWeekly = event.target.closest("#box-weekly")
+
+        if (clickYearly){
             yearlyBtn.classList.add("chosen")
             bestPlug.classList.add("chosen-best")
             weeklyBtn?.classList.remove("chosen")
-        } else if(target.id === "box-weekly"){
+        } else if(clickWeekly){
             yearlyBtn?.classList.remove("chosen")
             bestPlug?.classList.remove("chosen-best")
             weeklyBtn.classList.add("chosen")
@@ -101,8 +104,8 @@ function chosenLink (){
     const targetWeek = "https://apple.com/";
 
     document.addEventListener("click", function (event){
-        const eventTarget = event.target
-        if(eventTarget.id === "box-continue" || eventTarget.id === "continueSpan"){
+        const clickContinue = event.target.closest("#box-continue")
+        if(clickContinue){
             if (yearlyBtn && yearlyBtn.classList.contains("chosen") ||  bestPlug && bestPlug.classList.contains("chosen-best")){
                 window.location.href = targetYear;
             } else if(weeklyBtn && weeklyBtn.classList.contains("chosen")){
