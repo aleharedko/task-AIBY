@@ -30,7 +30,7 @@ html {
     color: var(--color-text);
     height: 100%;
     font-size: 16px;
-    background: url("assets/img/bg.jpg") no-repeat top fixed;
+    background: url("assets/img/bg.webp") no-repeat top fixed;
 }
 
 html, body {
@@ -347,20 +347,23 @@ h1 {
 
 @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
     body {
-        background-image: url(assets/img/bg@2x.jpg);
+        background-image: url('assets/img/bg@2x.webp');
     }
 
 
     .card-item:nth-child(1) {
         background-image: url('assets/img/bgUnlim@2x.jpg');
+        background-size: cover;
     }
 
     .card-item:nth-child(2) {
-        background-image: url('assets/img/Bitmap@2x.png');
+        background-image: url('assets/img/Bitmap@2x.webp');
+        background-size: cover;
     }
 
     .card-item:nth-child(3) {
-        background-image: url('assets/img/Group 33@2x.png');
+        background-image: url( 'assets/img/Group 33@2x.webp');
+        background-size: cover;
     }
 }
 
