@@ -37,7 +37,6 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-attachment: fixed;
-    /*background-position: center;*/
     background-repeat: no-repeat;
     background-position: top;
 }
@@ -69,7 +68,7 @@ body {
 main {
     flex: 1 0 auto;
     margin-bottom: 2rem;
-    margin-top: clamp(5rem, 20vh, 11.125rem);
+    margin-top: clamp(5rem, 22vh, 11.125rem);
 }
 
 footer {
@@ -108,6 +107,15 @@ h1 {
 .card-item {
     position: relative;
     overflow: hidden;
+    border-radius: var(--radius-card);
+}
+
+.card-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(4, 6, 26, 0) 62.04%, rgba(6, 9, 37, 0.56) 76.68%, #15072f 100%);
+    box-shadow: 0 0 22px 0 rgba(255, 130, 228, 0.24);
 }
 
 .img-box {
@@ -256,7 +264,6 @@ h1 {
 
 .toolbar > li {
     font-weight: 200;
-    /*font-size: 0.8125rem;*/
     text-decoration: underline;
     list-style: none;
     text-align: center;
@@ -276,7 +283,6 @@ h1 {
     opacity: 0.7;
 }
 
-
 .chosen-best{
     --color-best-gradient: none;
     --color-best-border: none;
@@ -292,11 +298,7 @@ h1 {
     body {
         background-image: url(assets/img/bg@2x.jpg);
     }
-    /*.card-item{*/
-    /*    background-size: cover;*/
-    /*    border: 11px;*/
-    /*    overflow: hidden;*/
-    /*}*/
+
 
     .card-item:nth-child(1) {
         background-image: url('assets/img/bgUnlim@2x.jpg');
@@ -309,26 +311,6 @@ h1 {
     .card-item:nth-child(3) {
         background-image: url('assets/img/Group 33@2x.png');
     }
-}
-
-@media (min-resolution: 3dppx), (-webkit-min-device-pixel-ratio: 3) {
-    body {
-        background-image: url(assets/img/bg@3.jpg);
-    }
-
-    .card-item:nth-child(1) {
-        background-image: url('assets/img/bgUnlim@3x.jpg');
-    }
-
-    .card-item:nth-child(2) {
-        background-image: url('assets/img/Bitmap@3x.png');
-    }
-
-
-    .card-item:nth-child(3) {
-        background-image: url('assets/img/Group 33@3x.png');
-    }
-
 }
 
 @media only screen and (max-height: 667px) {
