@@ -30,6 +30,7 @@ html {
     color: var(--color-text);
     height: 100%;
     font-size: 16px;
+    background: url("assets/img/bg.jpg") no-repeat top fixed;
 }
 
 body {
@@ -281,9 +282,6 @@ h1 {
     --color-best-border: none;
     box-shadow: var(--shadow-box-best);
     background: var(--color-bg-chosen);
-    /*Мб через js убрать из спана белый и накинуть данный цвет?*/
-
-
 }
 
 .chosen-best span{
@@ -294,15 +292,45 @@ h1 {
     body {
         background-image: url(assets/img/bg@2x.jpg);
     }
-}
-@media (min-resolution: 3dppx), (-webkit-min-device-pixel-ratio: 3) {
-    body {
-        background-image: url(assets/img/bg@3.jpg);
+    /*.card-item{*/
+    /*    background-size: cover;*/
+    /*    border: 11px;*/
+    /*    overflow: hidden;*/
+    /*}*/
 
+    .card-item:nth-child(1) {
+        background-image: url('assets/img/bgUnlim@2x.jpg');
+    }
+
+    .card-item:nth-child(2) {
+        background-image: url('assets/img/Bitmap@2x.png');
+    }
+
+    .card-item:nth-child(3) {
+        background-image: url('assets/img/Group 33@2x.png');
     }
 }
 
-/*как опустить верхний край ниже*/
+@media (min-resolution: 3dppx), (-webkit-min-device-pixel-ratio: 3) {
+    body {
+        background-image: url(assets/img/bg@3.jpg);
+    }
+
+    .card-item:nth-child(1) {
+        background-image: url('assets/img/bgUnlim@3x.jpg');
+    }
+
+    .card-item:nth-child(2) {
+        background-image: url('assets/img/Bitmap@3x.png');
+    }
+
+
+    .card-item:nth-child(3) {
+        background-image: url('assets/img/Group 33@3x.png');
+    }
+
+}
+
 @media only screen and (max-height: 667px) {
     main{
         margin-top: clamp(3rem, 7vh, 11.125rem)
