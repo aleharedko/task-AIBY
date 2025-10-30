@@ -347,7 +347,7 @@ h1 {
 
 @media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
     body {
-        background-image: url('assets/img/bg@2x.webp');
+        background-image: url('assets/img/bg@2.jpg');
     }
 
 
@@ -357,12 +357,12 @@ h1 {
     }
 
     .card-item:nth-child(2) {
-        background-image: url('assets/img/Bitmap@2x.webp');
+        background-image: url('assets/img/Bitmap@2x.png');
         background-size: cover;
     }
 
     .card-item:nth-child(3) {
-        background-image: url( 'assets/img/Group 33@2x.webp');
+        background-image: url( 'assets/img/Group 33@2x.png');
         background-size: cover;
     }
 }
